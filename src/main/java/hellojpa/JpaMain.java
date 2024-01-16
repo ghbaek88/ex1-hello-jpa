@@ -17,13 +17,11 @@ public class JpaMain {
 
         try {
             // code 작성
+            Member member = new Member();
+            member.setUsername("CC");
 
-            Member member = new Member(200L, "member200L");
             em.persist(member);
 
-            em.flush();
-
-            System.out.println("====================");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
